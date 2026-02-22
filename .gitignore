@@ -1,0 +1,16 @@
+# Jekyll build artifacts
+_site/
+.jekyll-cache/
+.bundle/
+vendor/
+
+# macOS
+.DS_Store
+
+# Obsidian (settings & cache)
+.obsidian/
+.obsidianbk/
+
+# temporary / cache files
+.smtcmp_json_db/
+*.tar.gz
