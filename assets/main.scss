@@ -3,57 +3,52 @@
 
 @import "minima";
 
-/* ===== wrapper を sectionごとに分けて制御 ===== */
+/* =========================
+   Palette (調整しやすいように変数化)
+========================= */
+$bg: #333;
+$panel: #3a3a3a;
+$headerFooter: #1f1f1f;
+$border: #444;
+$text: #eeeeee;
+$link: #9db4ff;
+$linkVisited: #c4b5fd;
 
-/* ヘッダー/フッターの wrapper は透明（箱にしない） */
-.site-header .wrapper,
-.site-footer .wrapper {
-  background: transparent !important;
-  box-shadow: none !important;
-  padding: 0 !important;
-  border-radius: 0 !important;
+/* =========================
+   Base
+========================= */
+html, body {
+  background: $bg !important;
 }
-
-/* 本文（中央）だけ箱にする */
-.page-content .wrapper {
-  background: #3a3a3a;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
-}
-
-/* ===== 全体トーン：やさしいダークグレー ===== */
 
 body {
-  background: #333;
-  color: #eeeeee;
+  color: $text;
 }
 
+/* Links */
+a { color: $link; }
+a:visited { color: $linkVisited; }
 
-/* リンク色（落ち着いた青紫） */
-a { color: #9db4ff; }
-a:visited { color: #c4b5fd; }
-
-/* ===== ヘッダー ===== */
-
+/* =========================
+   Header
+========================= */
 .site-header {
-  background: #1f1f1f;
-  border-bottom: 1px solid #444;
+  background: $headerFooter;
+  border-bottom: 1px solid $border;
   padding: 12px 0;
   border-radius: 0;
 }
 
-/* ヘッダーのタイトルが薄くなるのを強制修正 */
+/* タイトル・ナビの可読性を強制 */
 .site-title,
 .site-title:visited,
 .site-title:hover,
 .site-title:focus {
-  color: #ffffff !important;
+  color: #fff !important;
   opacity: 1 !important;
   text-shadow: none;
 }
 
-/* ナビも不透明に */
 .site-nav .page-link,
 .site-nav .page-link:visited {
   color: #f2f2f2 !important;
@@ -61,41 +56,36 @@ a:visited { color: #c4b5fd; }
 }
 
 .site-nav .page-link:hover {
-  color: #9db4ff !important;
+  color: $link !important;
 }
 
-/* ===== フッター ===== */
-
-.site-footer {
-  background: #1f1f1f;
-  border-top: 1px solid #444;
-  color: #ccc;
+/* =========================
+   Content area
+========================= */
+.site-content,
+.page-content,
+main.page-content {
+  background: $bg !important;
 }
 
-/* ===== 中央エリアの背景を統一 ===== */
-
-.site-content {
-  background: #333;
+/* メインコンテンツの箱（※Minimaだと header/footer も .wrapper を使う点に注意） */
+.wrapper {
+  background: $panel;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 
-.page-content {
-  background: #333;   /* bodyよりほんの少し暗く */
-}
-
-/* ===== 背景の統一（ここは強めに上書き） ===== */
-html, body {
-  background: #333 !important;
-}
-
-/* Minimaの中央エリア（main） */
-main.page-content,
-.page-content {
-  background: #333 !important;
-}
-
-/* もし中身の外側に別ラッパーがある場合の保険 */
-.site,
-.site-content {
+/* もし外側に背景が付いてた場合の保険 */
+.site {
   background: transparent !important;
 }
 
+/* =========================
+   Footer
+========================= */
+.site-footer {
+  background: $headerFooter;
+  border-top: 1px solid $border;
+  color: #ccc;
+}
