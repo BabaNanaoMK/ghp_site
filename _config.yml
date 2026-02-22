@@ -22,8 +22,8 @@ title: Masato Blog
 email: your-email@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   AIの習得練習とその結果のブログ
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://BabaNanaoMK.github.io/ghp_site/"
+baseurl: "/ghp_site"
 twitter_username: jekyllrb
 github_username:  jekyll
 
