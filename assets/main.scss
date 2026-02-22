@@ -69,3 +69,20 @@ a:visited { color: #c4b5fd; }
 .page-content {
   background: #333;
 }
+
+/* ===== 背景の統一（ここは強めに上書き） ===== */
+html, body {
+  background: #333 !important;
+}
+
+/* Minimaの中央エリア（main） */
+main.page-content,
+.page-content {
+  background: #333 !important;
+}
+
+/* もし中身の外側に別ラッパーがある場合の保険 */
+.site,
+.site-content {
+  background: transparent !important;
+}
