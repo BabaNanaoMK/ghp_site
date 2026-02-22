@@ -67,7 +67,7 @@ a:visited { color: #c4b5fd; }
 }
 
 .page-content {
-  background: #333;
+  background: #2f2f2f;   /* bodyよりほんの少し暗く */
 }
 
 /* ===== 背景の統一（ここは強めに上書き） ===== */
@@ -86,3 +86,4 @@ main.page-content,
 .site-content {
   background: transparent !important;
 }
+
