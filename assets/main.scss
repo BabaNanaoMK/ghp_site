@@ -3,6 +3,25 @@
 
 @import "minima";
 
+/* ===== wrapper を sectionごとに分けて制御 ===== */
+
+/* ヘッダー/フッターの wrapper は透明（箱にしない） */
+.site-header .wrapper,
+.site-footer .wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* 本文（中央）だけ箱にする */
+.page-content .wrapper {
+  background: #3a3a3a;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
 /* ===== 全体トーン：やさしいダークグレー ===== */
 
 body {
@@ -10,13 +29,6 @@ body {
   color: #eeeeee;
 }
 
-/* メインコンテンツの箱 */
-.wrapper {
-  background: #3a3a3a;
-  border-radius: 12px;
-  padding: 28px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.4);
-}
 
 /* リンク色（落ち着いた青紫） */
 a { color: #9db4ff; }
@@ -67,7 +79,7 @@ a:visited { color: #c4b5fd; }
 }
 
 .page-content {
-  background: #2f2f2f;   /* bodyよりほんの少し暗く */
+  background: #333;   /* bodyよりほんの少し暗く */
 }
 
 /* ===== 背景の統一（ここは強めに上書き） ===== */
