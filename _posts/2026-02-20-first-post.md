@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "0225"
+title: "0220"
 ---
 
 こんにちは。これが最初の記事です。
