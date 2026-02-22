@@ -89,3 +89,30 @@ main.page-content {
   border-top: 1px solid $border;
   color: #ccc;
 }
+
+/* =========================
+   Header
+========================= */
+
+.post-content h1,
+.post-content h2 {
+  position: relative;
+}
+
+.post-content h1::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #4fc3f7;
+  margin-top: 8px;
+}
+
+.post-content h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #888;
+  margin-top: 6px;
+}
