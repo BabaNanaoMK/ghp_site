@@ -1,0 +1,61 @@
+---
+---
+
+@import "minima";
+
+/* ===== 全体トーン：やさしいダークグレー ===== */
+
+body {
+  background: #333;
+  color: #eeeeee;
+}
+
+/* メインコンテンツの箱 */
+.wrapper {
+  background: #3a3a3a;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.4);
+}
+
+/* リンク色（落ち着いた青紫） */
+a { color: #9db4ff; }
+a:visited { color: #c4b5fd; }
+
+/* ===== ヘッダー ===== */
+
+.site-header {
+  background: #1f1f1f;
+  border-bottom: 1px solid #444;
+  padding: 12px 0;
+  border-radius: 0;
+}
+
+/* ヘッダーのタイトルが薄くなるのを強制修正 */
+.site-title,
+.site-title:visited,
+.site-title:hover,
+.site-title:focus {
+  color: #ffffff !important;
+  opacity: 1 !important;
+  text-shadow: none;
+}
+
+/* ナビも不透明に */
+.site-nav .page-link,
+.site-nav .page-link:visited {
+  color: #f2f2f2 !important;
+  opacity: 1 !important;
+}
+
+.site-nav .page-link:hover {
+  color: #9db4ff !important;
+}
+
+/* ===== フッター ===== */
+
+.site-footer {
+  background: #1f1f1f;
+  border-top: 1px solid #444;
+  color: #ccc;
+}
