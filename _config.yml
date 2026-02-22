@@ -30,12 +30,9 @@ github_username:  jekyll
 # Build settings
 theme: jekyll-theme-slate
 
-paginate: 10
-paginate_path: "/page:num/"
 
 plugins:
   - jekyll-feed
-  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.
