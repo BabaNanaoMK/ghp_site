@@ -14,6 +14,9 @@ $text: #eeeeee;
 $link: #9db4ff;
 $linkVisited: #c4b5fd;
 
+$neon1: #4fc3f7;
+$neon2: #9db4ff;
+
 /* =========================
    Base
 ========================= */
@@ -28,6 +31,7 @@ body {
 /* Links */
 a { color: $link; }
 a:visited { color: $linkVisited; }
+a:hover { text-decoration: underline; }
 
 /* =========================
    Header
@@ -36,10 +40,9 @@ a:visited { color: $linkVisited; }
   background: $headerFooter;
   border-bottom: 1px solid $border;
   padding: 12px 0;
-  border-radius: 0;
 }
 
-/* タイトル・ナビの可読性を強制 */
+/* タイトル・ナビの可読性 */
 .site-title,
 .site-title:visited,
 .site-title:hover,
@@ -68,17 +71,26 @@ main.page-content {
   background: $bg !important;
 }
 
-/* メインコンテンツの箱（※Minimaだと header/footer も .wrapper を使う点に注意） */
-.wrapper {
+/* “本文だけ”カードにしたいので main 内の wrapper に限定 */
+main.page-content > .wrapper {
   background: $panel;
-  border-radius: 12px;
+  border-radius: 14px;
   padding: 28px;
   box-shadow: 0 10px 30px rgba(0,0,0,.4);
 }
 
-/* もし外側に背景が付いてた場合の保険 */
+/* 外側の保険 */
 .site {
   background: transparent !important;
+}
+
+/* 画像をカードに馴染ませる（ついでに見栄えUP） */
+.page-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 14px 0;
 }
 
 /* =========================
@@ -91,77 +103,98 @@ main.page-content {
 }
 
 /* =========================
-   Headings (記事本文 h1-h4 を確実に装飾)
-   ※minimaの「記事タイトル(.post-title)」は本文外なので別で装飾
+   Headings (Minimal base + Neon underline for H2)
+   DOM: main.page-content > .wrapper > h2/h3...
 ========================= */
 
-/* 記事タイトル（front matter title由来の上部H1） */
-.post-title {
+/* 共通：余白と読みやすさを整える */
+.page-content .wrapper h1,
+.page-content .wrapper h2,
+.page-content .wrapper h3,
+.page-content .wrapper h4 {
+  line-height: 1.25;
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+/* h1：ミニマル（装飾しすぎない） */
+.page-content .wrapper h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-top: 2.4rem;
+}
+
+/* h2：ネオン下線（ここだけ主役） */
+.page-content .wrapper h2 {
+  font-size: 1.55rem;
+  font-weight: 700;
   position: relative;
-  padding-left: 14px;
-  border-left: 6px solid #4fc3f7;
+  padding-bottom: 8px;
+}
+
+/* ネオン下線本体 */
+.page-content .wrapper h2::after {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 120px;
+  margin-top: 8px;
+  background: linear-gradient(90deg, $neon1, $neon2);
+  box-shadow: 0 0 10px rgba(79,195,247,0.55);
+  border-radius: 999px;
+}
+
+/* h3：ミニマル（薄い左ラインだけ） */
+.page-content .wrapper h3 {
+  font-size: 1.22rem;
+  font-weight: 650;
+  padding-left: 10px;
+  border-left: 3px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.9);
+}
+
+/* h4：さらに控えめ */
+.page-content .wrapper h4 {
+  font-size: 1.06rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.72);
+}
+
+/* 段落の可読性ちょいUP（任意だけど効く） */
+.page-content .wrapper p,
+.page-content .wrapper li {
+  line-height: 1.7;
+}
+
+/* リストの詰まりを軽減 */
+.page-content .wrapper ul,
+.page-content .wrapper ol {
+  margin-top: 0.6rem;
   margin-bottom: 1rem;
 }
 
-.post-title::after {
-  content: "";
-  display: block;
-  height: 1px;
-  background: rgba(255,255,255,0.14);
-  margin-top: 10px;
+/* ===== Post title icon ===== */
+.post-title.with-icon {
+  display: flex;
+  align-items: center;
+  gap: 14px;
 }
 
-/* 本文見出し共通（h1-h4） */
-.post-content h1,
-.post-content h2,
-.post-content h3,
-.post-content h4 {
-  position: relative;
-  margin-top: 2.0rem;
-  margin-bottom: 0.9rem;
-  line-height: 1.25;
+.title-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+
+  /* ほんのり馴染ませる（強すぎない） */
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.08);
 }
 
-/* 本文 h1：太めの左ライン＋薄い背景 */
-.post-content h1 {
-  padding: 10px 12px 10px 14px;
-  border-left: 6px solid #4fc3f7;
-  background: rgba(255,255,255,0.04);
-  border-radius: 10px;
-  font-size: 1.9rem;
-}
-
-/* 本文 h2：下線＋左アクセント */
-.post-content h2 {
-  padding: 8px 12px 10px 12px;
-  border-left: 4px solid rgba(79,195,247,0.65);
-  border-bottom: 2px solid rgba(255,255,255,0.14);
-  border-radius: 8px;
-  font-size: 1.55rem;
-}
-
-/* 本文 h3：左だけ細く、控えめ */
-.post-content h3 {
-  padding-left: 10px;
-  border-left: 3px solid rgba(255,255,255,0.22);
-  font-size: 1.25rem;
-}
-
-/* 本文 h4：小さめ＋点線風の区切り */
-.post-content h4 {
-  padding-left: 10px;
-  font-size: 1.1rem;
-}
-
-.post-content h4::after {
-  content: "";
-  display: block;
-  height: 1px;
-  background: rgba(255,255,255,0.10);
-  margin-top: 8px;
-}
-
-
-body {
-  background: red !important;
+@media (max-width: 600px) {
+  .title-icon {
+    width: 36px;
+    height: 36px;
+  }
 }
