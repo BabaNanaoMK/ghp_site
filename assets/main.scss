@@ -208,3 +208,36 @@ main.page-content > .wrapper {
     height: 36px;
   }
 }
+
+/* =========================
+   Footer: 1-column (minimal)
+========================= */
+
+/* 2列/3列レイアウトを解除して1カラム化 */
+.site-footer .footer-col-wrapper {
+  display: block;
+}
+
+/* 左カラム（タイトル等）と中央（SNS）を消す */
+.site-footer .footer-col-1,
+.site-footer .footer-col-2 {
+  display: none;
+}
+
+/* 右カラム（description）を横幅いっぱいに */
+.site-footer .footer-col-3 {
+  width: 100%;
+  float: none;
+}
+
+/* 余白と見た目を整える（任意だけど効く） */
+.site-footer {
+  padding: 22px 0;
+}
+.site-footer .footer-heading {
+  display: none; /* “Banana Blog”見出しが出る環境なら消す */
+}
+.site-footer .footer-col-3 p {
+  margin: 0.4rem 0;
+  color: rgba(255,255,255,0.65);
+}
