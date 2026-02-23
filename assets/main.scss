@@ -133,12 +133,12 @@ main.page-content > .wrapper {
   padding-bottom: 8px;
 }
 
-/* ネオン下線本体 */
+/* ネオン下線本体（少し長めに調整しやすい） */
 .page-content .wrapper h2::after {
   content: "";
   display: block;
   height: 3px;
-  width: 120px;
+  width: 160px; /* ← 長さはここ */
   margin-top: 8px;
   background: linear-gradient(90deg, $neon1, $neon2);
   box-shadow: 0 0 10px rgba(79,195,247,0.55);
@@ -161,7 +161,7 @@ main.page-content > .wrapper {
   color: rgba(255,255,255,0.72);
 }
 
-/* 段落の可読性ちょいUP（任意だけど効く） */
+/* 段落の可読性ちょいUP */
 .page-content .wrapper p,
 .page-content .wrapper li {
   line-height: 1.7;
@@ -174,26 +174,36 @@ main.page-content > .wrapper {
   margin-bottom: 1rem;
 }
 
-/* ===== Post title icon ===== */
-.post-title.with-icon {
+/* =========================
+   Post title icon (NO !important / 勝てるセレクタ)
+========================= */
+
+/* タイトル行を横並びに */
+.post-header .post-title.with-icon {
   display: flex;
   align-items: center;
   gap: 14px;
 }
 
-.title-icon {
+/* Minima側のimgスタイルと競合しても勝つように “post-header 内” に限定して強める */
+.post-header .post-title.with-icon > img.title-icon {
   width: 44px;
   height: 44px;
   border-radius: 50%;
   object-fit: cover;
   flex-shrink: 0;
+  display: block;
 
-  /* ほんのり馴染ませる（強すぎない） */
-  box-shadow: 0 0 0 2px rgba(255,255,255,0.08);
+  /* ほんのり馴染ませる */
+  box-shadow:
+    0 0 0 2px rgba(255,255,255,0.10),
+    0 8px 18px rgba(0,0,0,0.35);
+  opacity: 0.98;
 }
 
+/* モバイル */
 @media (max-width: 600px) {
-  .title-icon {
+  .post-header .post-title.with-icon > img.title-icon {
     width: 36px;
     height: 36px;
   }
