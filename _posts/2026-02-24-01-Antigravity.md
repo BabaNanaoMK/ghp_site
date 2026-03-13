@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Antigravity
+categories: []
 ---
 ## 初めての Antigravity
 
