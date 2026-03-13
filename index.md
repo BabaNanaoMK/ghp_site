@@ -1,5 +1,5 @@
 ---
-layout: defaulthome
+layout: default
 title: Blog
 ---
 
