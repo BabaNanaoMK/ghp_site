@@ -18,6 +18,7 @@ AIに関するよしなしごとを徒然なるままに記載します。
   <li><a href="{{ '/categories/github_pages/' | relative_url }}">GitHub Pages</a></li>
   <li><a href="{{ '/categories/jekyll/' | relative_url }}">Jekyll</a></li>
   <li><a href="{{ '/categories/kindle_publishing/' | relative_url }}">Kindle Publishing</a></li>
+  <li><a href="{{ '/categories/others/' | relative_url }}">others</a></li>
 </ul>
 
 ## Blog
