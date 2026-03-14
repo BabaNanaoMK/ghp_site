@@ -10,6 +10,8 @@ AIに関するよしなしごとを徒然なるままに記載します。
 ## カテゴリ
 
 <ul class="category-list">
+  <li><a href="{{ '/categories/chatgpt/' | relative_url }}">ChatGPT</a></li>
+  <li><a href="{{ '/categories/gemini/' | relative_url }}">Gemini</a></li>
   <li><a href="{{ '/categories/claude/' | relative_url }}">Claude</a></li>
   <li><a href="{{ '/categories/codex_cli/' | relative_url }}">Codex CLI</a></li>
   <li><a href="{{ '/categories/gemini_cli/' | relative_url }}">Gemini CLI</a></li>
