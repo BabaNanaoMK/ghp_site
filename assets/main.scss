@@ -301,3 +301,61 @@ main.page-content > .wrapper {
   margin: 0.4rem 0;
   color: rgba(255,255,255,0.65);
 }
+
+/* =========================
+   Tables (読みやすくシンプルに)
+========================= */
+.page-content .wrapper table {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  margin: 1.5rem 0 !important;
+  font-size: 0.95rem !important;
+  line-height: 1.6 !important;
+}
+
+.page-content .wrapper table thead {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.page-content .wrapper table th,
+.page-content .wrapper table td {
+  padding: 12px 14px !important;
+  text-align: left !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  color: $text !important;
+  background: $panel !important;
+}
+
+/* ヘッダーセルのテキスト */
+.page-content .wrapper table th {
+  font-weight: 600 !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+}
+
+/* データ行の背景色を統一 */
+.page-content .wrapper table tbody tr {
+  background: $panel !important;
+}
+
+.page-content .wrapper table tbody tr td {
+  background: $panel !important;
+}
+
+/* ホバー時は少し明るく */
+.page-content .wrapper table tbody tr:hover td {
+  background: rgba(255, 255, 255, 0.06) !important;
+}
+
+/* モバイル対応（テーブルがスクロール可能に） */
+@media (max-width: 768px) {
+  .page-content .wrapper table {
+    font-size: 0.85rem !important;
+  }
+
+  .page-content .wrapper table th,
+  .page-content .wrapper table td {
+    padding: 8px 10px !important;
+  }
+}
